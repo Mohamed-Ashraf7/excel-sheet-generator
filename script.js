@@ -6,9 +6,10 @@ tableExists = false;
 const generateTable = () => {
   if (rows.value == 0 || columns.value == 0) {
     Swal.fire({
+      icon: "error",
       title: "Fields are empty !",
-      text: "Please Enter a Value for Rows and Columns",
-      icon: "warning",
+      html: "<span style='color:white; font-size:30px;'>You must write a valid values!</span>",
+      background: "#212121",
       confirmButtonText: "Try again",
     });
   } else {
@@ -31,9 +32,10 @@ const generateTable = () => {
 const ExportToExcel = (type, fn, dl) => {
   if (!tableExists) {
     Swal.fire({
-      title: "Alert!",
-      text: "There is No Generated Table to be Exported",
       icon: "warning",
+      title: "Alert!",
+      html: "<span style='color:white; font-size:30px;'>You must write a valid values!</span>",
+      background: "#212121",
       confirmButtonText: "Try again",
     });
   }
